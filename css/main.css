@@ -27,6 +27,9 @@ h3 {
 h6 {
     font-size: 13px;
 }
+* {
+    position: relative;
+}
 
 /*container*/
 .container {
@@ -43,8 +46,10 @@ h6 {
     padding-top: 60px;
     padding-bottom: 10px;
     background-color: #fff;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
-    /*transition: .3s;*/
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
+       -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
+
 }
 .logo-small {
     position: relative;
@@ -68,6 +73,9 @@ h6 {
 }
 .menu li {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
     padding: 0 10px;
 }
 .active {
@@ -90,11 +98,11 @@ h6 {
     animation-duration: 1s;
 }
 .logo-large {
-    margin: auto;
+    margin: 10vh auto 0;
     width: 200px;
 }
 .banner h1 {
-    padding-top: 40px;
+    padding-top: 5vh;
     color: #fff;
 }
 .banner p {
@@ -103,8 +111,11 @@ h6 {
     color: #6ee2d3;
 }
 .banner p:before, .banner p:after {
-    content: "";
     display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    content: "";
     width: 40px;
     height: 1px;
     margin: 0 10px;
@@ -128,6 +139,9 @@ h6 {
 }
 .about .icon-wrapper {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
     margin: auto;
     padding: 0 30px 30px;
     width: 100px;
@@ -135,12 +149,14 @@ h6 {
 }
 .about .icon {
     position: relative;
-    border-radius: 50px;
     width: 100px;
     height: 100px;
     text-align: center;
     color: #fff;
     background-color: #6ee2d3;
+    -webkit-border-radius: 50px; /* Safari 和 Chrome */
+       -moz-border-radius: 50px; /* Firefox */
+            border-radius: 50px;
 }
 .about .icon-effect {
     position: absolute;
@@ -149,11 +165,15 @@ h6 {
     top: -8px;
     left: -8px;
     padding: 8px;
-    border-radius: 58px;
+    -webkit-border-radius: 58px; /* Safari 和 Chrome */
+       -moz-border-radius: 58px; /* Firefox */
+            border-radius: 58px;
     transition: .6s;
 }
 .about .icon:hover .icon-effect{
-    box-shadow: 0 0 0 2px #6ee2d3;
+    -webkit-box-shadow: 0 0 0 2px #6ee2d3;
+       -moz-box-shadow: 0 0 0 2px #6ee2d3;
+            box-shadow: 0 0 0 2px #6ee2d3;
 }
 .about .icon i {
     padding-top: 22px;
@@ -187,7 +207,9 @@ h6 {
     width: 20px;
     height: 20px;
     left: 50%;
-    border-radius: 10px;
+    -webkit-border-radius: 10px; /* Safari 和 Chrome */
+       -moz-border-radius: 10px; /* Firefox */
+            border-radius: 10px;
     -webkit-transform: translate(-50%,0);
        -moz-transform: translate(-50%,0);
         -ms-transform: translate(-50%,0);
@@ -249,7 +271,6 @@ h6 {
     left: 11%;
 }
 .time-line-image .tl-table {
-    /*position: relative;*/
     width: 128px;
 }
 .time-line-image .tl-pc {
@@ -284,6 +305,9 @@ h6 {
 }
 .depart .icon-wrapper {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
     margin: 0 auto;
     padding: 30px 20px;
     width: 230px;
@@ -294,7 +318,9 @@ h6 {
     height: 120px;
     margin: 0 auto;
     border: solid 3px #fff;
-    border-radius: 60px;
+    -webkit-border-radius: 60px; /* Safari 和 Chrome */
+       -moz-border-radius: 60px; /* Firefox */
+            border-radius: 60px;
 }
 .depart .icon i {
     padding-top: 25px;
@@ -324,6 +350,9 @@ h6 {
 }
 .photo-wrapper {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
     width: 280px;
     height: 280px;
     margin: 10px;
@@ -381,6 +410,8 @@ h6 {
 }
 .team .member-wrapper {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     vertical-align: top;
     width: 250px;
     margin: 0 auto;
@@ -390,7 +421,9 @@ h6 {
     width: 200px;
     height: 200px;
     border: solid 4px #6ee2d3;
-    border-radius: 100px;
+    -webkit-border-radius: 100px; /* Safari 和 Chrome */
+       -moz-border-radius: 100px; /* Firefox */
+           border-radius: 100px;
     background-color: #fff;
 }
 .member-info h3, .member-info h6 {
@@ -449,13 +482,15 @@ h6 {
     width: 90%;
     margin-bottom: 20px;
     padding: 10px;
-    border-radius: 5px;
     font-size: 14px;
     color: #33363C;
     background-color: #ddd;
     border: none;
     outline: none;
     resize: none;
+    -webkit-border-radius: 5px; /* Safari 和 Chrome */
+       -moz-border-radius: 5px; /* Firefox */
+            border-radius: 5px;
 }
 .join-form select {
     height: 40px;
@@ -468,10 +503,12 @@ h6 {
     margin-top: 30px;
     padding: 10px 20px;
     border: none;
-    border-radius: 10px;
     color: #fff;
     font-size: 20px;
     background-color: #6ee2d3;
+    -webkit-border-radius: 10px; /* Safari 和 Chrome */
+       -moz-border-radius: 10px; /* Firefox */
+            border-radius: 10px;
 }
 
 /*footer*/
@@ -509,13 +546,16 @@ h6 {
 }
 .animated-ready {
     visibility: hidden;
-    animation-delay: .5s;
+    animation-delay: .3s;
     animation-name: none;
 }
 
 @media (max-width: 1200px) {
     .container {
         width: 90%;
+    }
+    .about .icon-wrapper {
+        padding: 0 20px 30px;
     }
     .tl-image3, .tl-image4 {
         display: none;
@@ -532,12 +572,9 @@ h6 {
     .container {
         width: 95%;
     }
-    .team .member-wrapper {
-        padding: 30px 0;
+    .about .icon-wrapper {
+        padding: 0 60px 30px;
     }
-}
-
-@media (max-width: 768px) {
     .nav-icon {
         display: block;
     }
@@ -555,6 +592,13 @@ h6 {
         text-align: right;
         padding: 5px 0;
     }
+    .team .member-wrapper {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+
     .time-line:before, .time-line-dot {
         left: 10%;
     }

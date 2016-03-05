@@ -5,6 +5,7 @@ window.onload = function() {
     addAnimate();
     updateNav();
     navOnClick();
+    animatedReady();
 }
 
 window.onscroll = function() {
