@@ -280,7 +280,7 @@ h6 {
 .tl-image3 {
     left: 11%;
 }
-.time-line-image .tl-table {
+.time-line-image .tl-table, .time-line-image .tl-build {
     width: 128px;
 }
 .time-line-image .tl-pc {
