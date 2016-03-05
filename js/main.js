@@ -19,9 +19,32 @@ window.onscroll = function() {
 }
 
 function isIE (){
-    var b = document.createElement('b')
-    b.innerHTML = '<!--[if IE]><i></i><![endif]-->'
-    return b.getElementsByTagName('i').length === 1
+    var b = document.createElement('b');
+    b.innerHTML = '<!--[if IE]><i></i><![endif]-->';
+    return b.getElementsByTagName('i').length === 1;
+}
+
+function submit()
+{
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("success").innerHTML=xmlhttp.responseText;
+        }
+    }
+    var name = document.getElementById("name").innerHTML;
+    xmlhttp.open("GET","./ajax/success.txt?name=name",true);
+    xmlhttp.send();
 }
 
 function addAnimate() {
