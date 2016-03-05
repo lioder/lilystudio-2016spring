@@ -2,16 +2,26 @@
  * Created by Sorumi on 16/3/2.
  */
 window.onload = function() {
-    addAnimate();
-    updateNav();
     navOnClick();
-    animatedReady();
+    updateNav();
+    if (!isIE(6) & !isIE(7) & !isIE(8) & !isIE(9)) {
+        addAnimate();
+        animatedReady();
+    }
 }
 
 window.onscroll = function() {
     updateNav();
-    updateLogo();
-    animatedReady();
+    if (!isIE(6) & !isIE(7) & !isIE(8) & !isIE(9)){
+        updateLogo();
+        animatedReady();
+    }
+}
+
+function isIE (){
+    var b = document.createElement('b')
+    b.innerHTML = '<!--[if IE]><i></i><![endif]-->'
+    return b.getElementsByTagName('i').length === 1
 }
 
 function addAnimate() {
@@ -86,9 +96,11 @@ function navOnClick() {
         $(".menu").slideToggle("");
     })
 }
+
 jQuery(document).ready(function($) {
     $(".scroll").click(function(event){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
     });
 });
+
