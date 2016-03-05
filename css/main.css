@@ -358,7 +358,6 @@ h6 {
     margin: 10px;
     border: solid 7px #fff;
     text-align: center;
-    vertical-align: top;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
     overflow: hidden;
 }
@@ -389,6 +388,7 @@ h6 {
     padding-top: 200px;
 }
 .photo-wrapper img {
+    position: static;
     height: 280px;
     vertical-align : middle
 }
@@ -479,9 +479,9 @@ h6 {
 }
 .join-form input[type=text], .join-form select, .join-form textarea {
     display: block;
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 10px 0;
     font-size: 14px;
     color: #33363C;
     background-color: #ddd;
@@ -494,10 +494,10 @@ h6 {
 }
 .join-form select {
     height: 40px;
-    width: 94%;
+    width: 100%;
 }
 .join-form textarea {
-    height: 180px;
+    height: 178px;
 }
 .join .submit-btn {
     margin-top: 30px;
@@ -595,6 +595,13 @@ h6 {
     .team .member-wrapper {
         padding: 30px 0;
     }
+    .join-left, .join-right {
+        width: 70%;
+        padding: 0 15%;
+    }
+    .join-form {
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -627,13 +634,6 @@ h6 {
     .depart .icon-wrapper, .team .member-wrapper {
         width: 100%;
     }
-    .join-left, .join-right {
-        width: 80%;
-        padding: 0 10%;
-    }
-    .join-form {
-        margin: 0 auto;
-    }
 }
 
 @media (max-width: 550px) {
@@ -642,6 +642,10 @@ h6 {
     }
     .time-line-info {
         width: 300px;
+    }
+    .join-left, .join-right {
+        width: 80%;
+        padding: 0 10%;
     }
 }
 
