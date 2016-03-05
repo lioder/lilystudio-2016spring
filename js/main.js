@@ -25,11 +25,21 @@ function isIE (){
 }
 
 function addAnimate() {
+    $(".banner").addClass("animated-ready").attr("href","fadeIn");
+    $(".about .icons").addClass("animated-ready").attr("href","fadeIn");
     $(".time-line-info").addClass("animated-ready").attr("href","fadeIn");
+
+    $(".tl-image1").addClass("animated-ready").attr("href","fadeIn");
+    $(".tl-pc").addClass("animated-ready").attr("href","bounceIn");
+    $(".tl-table").addClass("animated-ready").attr("href","bounceInDown");
+    $(".tl-build").addClass("animated-ready").attr("href","slideInUp");
+
     $(".photo-wrapper").addClass("animated-ready").attr("href","zoomInUp");
     $(".depart .icon-wrapper").addClass("animated-ready").attr("href","zoomIn");
     $(".member-wrapper").addClass("animated-ready").attr("href","fadeIn");
     $(".join-form").addClass("animated-ready").attr("href","fadeInUp");
+    $("#submit").addClass("animated-ready").attr("href","shake");
+
 }
 
 function updateNav() {
