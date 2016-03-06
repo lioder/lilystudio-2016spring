@@ -100,14 +100,14 @@ function updateLogo() {
 }
 
 function animatedReady() {
-    var ready = document.querySelectorAll(".animated-ready");
-    console.log(ready);
+    var ready = document.getElementsByClassName("animated-ready");
+    console.log("ready=",ready);
 
     for(var i = 0; i < ready.length; i++) {
         var ar = ready[i];
-        console.log(ar);
+        console.log("ar=",ar);
         var top = getTop(ar);
-        console.log(top);
+        console.log("top=",top);
         if((window.scrollY + window.innerHeight) > top) {
 
             var animateType = $(ar).attr("href");
