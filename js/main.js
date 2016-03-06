@@ -4,6 +4,9 @@
 window.onload = function() {
     navOnClick();
     updateNav();
+    if(isIE()){
+        alert("isIE");
+    }
     if (!isIE()) {
         addAnimate();
         animatedReady();
