@@ -4,7 +4,7 @@
 window.onload = function() {
     navOnClick();
     updateNav();
-    if (!isIE(6) & !isIE(7) & !isIE(8) & !isIE(9)) {
+    if (!isIE()) {
         addAnimate();
         animatedReady();
     }
@@ -12,7 +12,7 @@ window.onload = function() {
 
 window.onscroll = function() {
     updateNav();
-    if (!isIE(6) & !isIE(7) & !isIE(8) & !isIE(9)){
+    if (!isIE()){
         updateLogo();
         animatedReady();
     }
