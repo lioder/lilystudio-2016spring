@@ -2,8 +2,6 @@
  * Created by Sorumi on 16/3/2.
  */
 window.onload = function() {
-    alert(isIE());
-
     navOnClick();
     updateNav();
     addAnimate();
