@@ -110,7 +110,7 @@ function animatedReady() {
         var top = getTop(ar);
         console.log("top=",top);
         console.log("scrollY=",window.scrollY + window.innerHeight)
-        if(((document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop) + document.body.clientHeight) > top) {
+        if(((document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop) + $(window).height()) > top) {
 
             var animateType = $(ar).attr("href");
             $(ar).addClass("animated "+animateType);
