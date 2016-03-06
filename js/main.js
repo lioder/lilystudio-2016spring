@@ -108,8 +108,9 @@ function animatedReady() {
 
     for(var i = 0; i < ready.length; i++) {
         var ar = ready[i];
-        if((window.scrollY + window.innerHeight)> getTop(ar)) {
-            //console.log(ar.offsetTop);
+        var top = getTop(ar);
+        if((window.scrollY + window.innerHeight) > top) {
+            console.log(top);
             var animateType = $(ar).attr("href");
             $(ar).addClass("animated "+animateType);
             $(ar).css("visibility","visible");
