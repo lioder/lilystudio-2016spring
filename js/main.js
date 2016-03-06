@@ -108,6 +108,7 @@ function animatedReady() {
         console.log("ar=",ar);
         var top = getTop(ar);
         console.log("top=",top);
+        console.log("scrollY=",window.scrollY + window.innerHeight)
         if((window.scrollY + window.innerHeight) > top) {
 
             var animateType = $(ar).attr("href");
