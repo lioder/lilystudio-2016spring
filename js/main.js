@@ -4,21 +4,14 @@
 window.onload = function() {
     navOnClick();
     updateNav();
-    if(isIE()){
-        alert("isIE");
-    }
-    if (!isIE()) {
-        addAnimate();
-        animatedReady();
-    }
+    addAnimate();
+    animatedReady();
 }
 
 window.onscroll = function() {
     updateNav();
-    if (!isIE()){
-        updateLogo();
-        animatedReady();
-    }
+    updateLogo();
+    animatedReady();
 }
 
 function isIE (){
@@ -108,12 +101,15 @@ function updateLogo() {
 
 function animatedReady() {
     var ready = document.querySelectorAll(".animated-ready");
+    console.log(ready);
 
     for(var i = 0; i < ready.length; i++) {
         var ar = ready[i];
+        console.log(ar);
         var top = getTop(ar);
+        console.log(top);
         if((window.scrollY + window.innerHeight) > top) {
-            console.log(top);
+
             var animateType = $(ar).attr("href");
             $(ar).addClass("animated "+animateType);
             $(ar).css("visibility","visible");
