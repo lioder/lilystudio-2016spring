@@ -2,6 +2,8 @@
  * Created by Sorumi on 16/3/2.
  */
 window.onload = function() {
+    alert(isIE());
+
     navOnClick();
     updateNav();
     addAnimate();
@@ -105,11 +107,10 @@ function animatedReady() {
 
     for(var i = 0; i < ready.length; i++) {
         var ar = ready[i];
-        console.log("ar=",ar);
         var top = getTop(ar);
         console.log("top=",top);
         console.log("scrollY=",window.scrollY + window.innerHeight)
-        if((window.scrollY + window.innerHeight) > top) {
+        if(((document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop) + document.body.clientHeight) > top) {
 
             var animateType = $(ar).attr("href");
             $(ar).addClass("animated "+animateType);
