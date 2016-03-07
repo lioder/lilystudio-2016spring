@@ -123,9 +123,19 @@ function navOnClick() {
 function navHidden() {
 
     if(!isPC()){
-        $(document).on('focus', 'input', function(e) {
+        $("input").on("focus", function(e) {
             $(".nav").hide();
-        }).on('blur', 'input', function(e) {
+        }).on("blur", function(e) {
+            $(".nav").show();
+        });
+        $("select").on("focus", function(e) {
+            $(".nav").hide();
+        }).on("blur", function(e) {
+            $(".nav").show();
+        });
+        $("textarea").on("focus", function(e) {
+            $(".nav").hide();
+        }).on("blur", function(e) {
             $(".nav").show();
         });
     }
