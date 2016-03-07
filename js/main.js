@@ -6,6 +6,7 @@ window.onload = function() {
     updateNav();
     addAnimate();
     animatedReady();
+    navHidden();
 }
 
 window.onscroll = function() {
@@ -14,33 +15,26 @@ window.onscroll = function() {
     animatedReady();
 }
 
-function isIE (){
-    var b = document.createElement('b');
-    b.innerHTML = '<!--[if IE]><i></i><![endif]-->';
-    return b.getElementsByTagName('i').length === 1;
-}
-
 function submit()
 {
-    var xmlhttp;
-    if (window.XMLHttpRequest)
-    {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    }
-    else
-    {// code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            document.getElementById("success").innerHTML=xmlhttp.responseText;
-        }
-    }
-    var name = document.getElementById("name").innerHTML;
-    xmlhttp.open("GET","./ajax/success.txt?name=name",true);
-    xmlhttp.send();
+        var data = {
+            name: $("#name").val(),
+            number: $("#number").val(),
+            sex: $("#sex").val(),
+            email: $("#email").val(),
+            phone: $("#phone").val(),
+            group: $("#group option:selected").text(),
+            expr: $("#intro").val(),
+            hobby: $("#hobby").val(),
+        };
+
+    console.log(data);
+
+    $.post("/b.php",data,function(text){
+        $("#success").text(text);
+    })
+
+
 }
 
 function addAnimate() {
@@ -101,13 +95,10 @@ function updateLogo() {
 
 function animatedReady() {
     var ready = document.getElementsByClassName("animated-ready");
-    console.log("ready=",ready);
 
     for(var i = 0; i < ready.length; i++) {
         var ar = ready[i];
         var top = getTop(ar);
-        console.log("top=",top);
-        console.log("scrollY=",window.scrollY + window.innerHeight)
         if(((document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop) + $(window).height()) > top) {
 
             var animateType = $(ar).attr("href");
@@ -129,7 +120,25 @@ function navOnClick() {
         $(".menu").slideToggle("");
     })
 }
+function navHidden() {
 
+    if(!isPC()){
+        $(document).on('focus', 'input', function(e) {
+            $(".nav").hide();
+        }).on('blur', 'input', function(e) {
+            $(".nav").show();
+        });
+    }
+}
+function isPC(){
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+    }
+    return flag;
+}
 jQuery(document).ready(function($) {
     $(".scroll").click(function(event){
         event.preventDefault();

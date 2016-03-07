@@ -497,7 +497,8 @@ h6 {
     display: block;
     width: 100%;
     margin-bottom: 20px;
-    padding: 10px 0;
+    padding: 10px;
+    font-family: "Open Sans","Microsoft Yahei Light", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 14px;
     color: #33363C;
     background-color: #ddd;
@@ -507,13 +508,16 @@ h6 {
     -webkit-border-radius: 5px; /* Safari 和 Chrome */
        -moz-border-radius: 5px; /* Firefox */
             border-radius: 5px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .join-form select {
     height: 40px;
     width: 100%;
 }
 .join-form textarea {
-    height: 178px;
+    height: 196px;
 }
 .join .submit-btn {
     margin-top: 30px;
@@ -653,6 +657,15 @@ h6 {
 }
 
 @media (max-width: 550px) {
+    .nav {
+        padding-top: 20px;
+    }
+    .banner {
+        padding-top: 20vh;
+    }
+    .banner p {
+        margin-top: 10vh;
+    }
     .time-line:before {
         height: 830px;
     }
@@ -666,6 +679,12 @@ h6 {
 }
 
 @media (max-width: 400px) {
+    .logo-large {
+        width: 130px;
+    }
+    .banner h1 {
+        font-size: 32px;
+    }
     .time-line:before {
         height: 1020px;
     }
