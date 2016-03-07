@@ -17,23 +17,28 @@ window.onscroll = function() {
 
 function submit()
 {
-        var data = {
-            name: $("#name").val(),
-            number: $("#number").val(),
-            sex: $("#sex").val(),
-            email: $("#email").val(),
-            phone: $("#phone").val(),
-            group: $("#group option:selected").text(),
-            expr: $("#intro").val(),
-            hobby: $("#hobby").val(),
-        };
+    var data = {
+        name: $("#name").val(),
+        number: $("#number").val(),
+        sex: $("#sex").val(),
+        email: $("#email").val(),
+        phone: $("#phone").val(),
+        depart: $("#group option:selected").text(),
+        expr: $("#intro").val(),
+        hobby: $("#hobby").val(),
+    };
 
-    console.log(data);
+    $("#submit").attr('disabled', 'disabled');
 
     $.post("/b.php",data,function(text){
         $("#success").text(text);
-    })
 
+        if(text === "信息不完整，请重新输入！"){
+            $("#submit").removeAttr('disabled')
+        }else{
+
+        }
+    })
 
 }
 
@@ -79,13 +84,14 @@ function updateNav() {
 function updateLogo() {
     var height = window.scrollY;
     var logoSmall = $(".logo-small");
+    var navDefault = $(".nav").css("padding-top");
     if (height>40) {
         $(".nav").css("padding-top","20px").css("opacity",0.9).css("position","fixed");
         logoSmall.removeClass("animated zoomOut");
         logoSmall.addClass("animated zoomIn");
         logoSmall.css("opacity","1");
     }else{
-        $(".nav").css("padding-top","60px").css("opacity",1).css("position","absolute");
+        $(".nav").css("padding-top",navDefault).css("opacity",1).css("position","absolute");
         if (logoSmall.css("opacity") == "1"){
             logoSmall.removeClass("animated zoomIn");
             logoSmall.addClass("animated zoomOut");
@@ -145,7 +151,9 @@ function isPC(){
     var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
     var flag = true;
     for (var v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false; break;
+        }
     }
     return flag;
 }
