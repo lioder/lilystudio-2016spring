@@ -43,6 +43,7 @@ p {
 }
 .navbar-ul li.active {
     background-color: #FFFFFF !important;
+    border-bottom: 3px solid #DB5375;
 }
 .navbar-ul li.active a{
     opacity: 1.0 !important;
@@ -365,7 +366,7 @@ div.time-line-node-info h1 {
 }
 .depart-head p {
     font-size: 24px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 40px;
 }
 .leader-group {
@@ -415,7 +416,7 @@ div.time-line-node-info h1 {
     margin-bottom: 90px;
 }
 .join-head {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .join-head h2 {
     color: #75AAAE;
@@ -455,11 +456,11 @@ div.time-line-node-info h1 {
     vertical-align: middle;
     width: 170px;
     height: 60px;
-    border-radius: 10px;
+    border-radius: 50px;
     margin-top: 40px;
-    border: none;
-    color: #FFFFFF;
-    background-color: #75AAAE;
+    border: 3px solid #75AAAE ;
+    color: #75AAAE;
+    background-color: #f0f0f0;
     font-size: 24px;
     outline: none;
     opacity: 1.0;
@@ -470,7 +471,8 @@ div.time-line-node-info h1 {
     transition: opacity 0.6s;
 }
 .submit-btn:hover {
-    opacity: 0.6;
+    background-color: #75AAAE;
+    color: #ffffff;
 }
 
 .bottom-footer {
